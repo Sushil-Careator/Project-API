@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", Number)
 ], Order.prototype, "amount", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    typeorm_1.Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" }),
     __metadata("design:type", Date)
 ], Order.prototype, "orderDate", void 0);
 __decorate([

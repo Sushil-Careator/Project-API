@@ -4287,7 +4287,7 @@
         "affectsGlobalScope": false
       },
       "../src/order/entities/order.entity.ts": {
-        "version": "a1710b903e2ccd29baa044f869b26c164558dde4d9371a10931fefd3175d8f85",
+        "version": "9d7a4cc75e4430b4e152fca75d061104aa7375d671ad425ff3e04703a8a15696",
         "signature": "797f84c02aae5287dd2f6685d84d8acd055bfc18c2685d9e4a4a8fb29a57f6c9",
         "affectsGlobalScope": false
       },

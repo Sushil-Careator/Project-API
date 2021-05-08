@@ -15,7 +15,7 @@ export class Order {
     @Column({ nullable: true, precision: 10 })
     amount: number;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" })
     orderDate: Date;
 
     @Column({ nullable: true })
