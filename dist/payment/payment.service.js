@@ -12,50 +12,48 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderService = void 0;
+exports.PaymentService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_service_1 = require("../auth/user/user.service");
 const typeorm_2 = require("typeorm");
-const order_entity_1 = require("./entities/order.entity");
-let OrderService = class OrderService {
-    constructor(orderRepository, userService) {
-        this.orderRepository = orderRepository;
+const payment_entity_1 = require("./entities/payment.entity");
+let PaymentService = class PaymentService {
+    constructor(paymentRepository, userService) {
+        this.paymentRepository = paymentRepository;
         this.userService = userService;
     }
-    async create(createOrderDto, userId) {
+    async create(createPaymentDto, userId) {
         const user = await this.userService.findById(userId);
-        return this.orderRepository.save({
-            amount: createOrderDto.amount,
-            orderDate: createOrderDto.orderDate,
-            shoppingDate: createOrderDto.shoppingDate,
+        let [data, count] = await this.paymentRepository.findAndCount();
+        console.log(data);
+        console.log(count);
+        return this.paymentRepository.save({
+            amountPaid: createPaymentDto.amountPaid,
+            paymentMethod: createPaymentDto.paymentMethod,
+            paymentType: createPaymentDto.paymentType,
+            orderId: count + 1,
             user: user,
         });
     }
     findAll() {
-        return this.orderRepository.find();
+        return this.paymentRepository.find();
     }
     findOne(id) {
-        return this.orderRepository.findOne(id).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return data;
-        });
+        return this.paymentRepository.findOne(id);
     }
-    update(id, updateOrderDto) {
-        return this.orderRepository.update({ orderId: id }, {
-            amount: updateOrderDto.amount,
-            orderDate: updateOrderDto.orderDate,
-            shoppingDate: updateOrderDto.shoppingDate,
-            status: updateOrderDto.status,
-        });
+    update(id, updatePaymentDto) {
+        return `This action updates a #${id} payment`;
+    }
+    remove(id) {
+        return `This action removes a #${id} payment`;
     }
 };
-OrderService = __decorate([
+PaymentService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(order_entity_1.Order)),
+    __param(0, typeorm_1.InjectRepository(payment_entity_1.Payment)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         user_service_1.UserService])
-], OrderService);
-exports.OrderService = OrderService;
-//# sourceMappingURL=order.service.js.map
+], PaymentService);
+exports.PaymentService = PaymentService;
+//# sourceMappingURL=payment.service.js.map

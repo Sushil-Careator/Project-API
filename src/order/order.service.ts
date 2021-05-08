@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from "@nestjs/common";
+import { HttpException, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { UserService } from "src/auth/user/user.service";
 import { Repository } from "typeorm";
@@ -28,7 +28,10 @@ export class OrderService {
     }
 
     findOne(id: number) {
-        return this.orderRepository.findOne(id);
+        return this.orderRepository.findOne(id).then((data) => {
+            if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
+            return data;
+        });
     }
 
     update(id: number, updateOrderDto: UpdateOrderDto) {

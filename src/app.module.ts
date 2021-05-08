@@ -6,6 +6,8 @@ import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { AddressModule } from './address/address.module';
 import { OrderModule } from './order/order.module';
+import { OrderDetailModule } from './order-detail/order-detail.module';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
   imports: [
@@ -15,6 +17,8 @@ import { OrderModule } from './order/order.module';
     AuthModule,
     AddressModule,
     OrderModule,
+    OrderDetailModule,
+    PaymentModule,
   ],
   controllers: [
     // register the controller

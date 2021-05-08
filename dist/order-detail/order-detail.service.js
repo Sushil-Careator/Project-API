@@ -12,50 +12,56 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderService = void 0;
+exports.OrderDetailService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_service_1 = require("../auth/user/user.service");
+const order_entity_1 = require("../order/entities/order.entity");
+const order_service_1 = require("../order/order.service");
 const typeorm_2 = require("typeorm");
-const order_entity_1 = require("./entities/order.entity");
-let OrderService = class OrderService {
-    constructor(orderRepository, userService) {
-        this.orderRepository = orderRepository;
+const order_detail_entity_1 = require("./entities/order-detail.entity");
+let OrderDetailService = class OrderDetailService {
+    constructor(orderDetailRepository, userService) {
+        this.orderDetailRepository = orderDetailRepository;
         this.userService = userService;
     }
-    async create(createOrderDto, userId) {
+    async create(createOrderDetailDto, userId) {
         const user = await this.userService.findById(userId);
-        return this.orderRepository.save({
-            amount: createOrderDto.amount,
-            orderDate: createOrderDto.orderDate,
-            shoppingDate: createOrderDto.shoppingDate,
+        let [data, count] = await this.orderDetailRepository.findAndCount();
+        console.log(data);
+        console.log(count);
+        return this.orderDetailRepository.save({
+            orderAmount: createOrderDetailDto.orderAmount,
+            orderQty: createOrderDetailDto.orderQty,
+            orderId: count + 2,
             user: user,
         });
     }
     findAll() {
-        return this.orderRepository.find();
+        return this.orderDetailRepository.find();
     }
     findOne(id) {
-        return this.orderRepository.findOne(id).then((data) => {
+        return this.orderDetailRepository.findOne(id).then((data) => {
             if (!data)
                 throw new common_1.NotFoundException();
             return data;
         });
     }
-    update(id, updateOrderDto) {
-        return this.orderRepository.update({ orderId: id }, {
-            amount: updateOrderDto.amount,
-            orderDate: updateOrderDto.orderDate,
-            shoppingDate: updateOrderDto.shoppingDate,
-            status: updateOrderDto.status,
+    update(id, updateOrderDetailDto) {
+        return this.orderDetailRepository.update({ orderDetailId: id }, {
+            orderAmount: updateOrderDetailDto.orderAmount,
+            orderQty: updateOrderDetailDto.orderQty,
         });
     }
+    remove(id) {
+        return this.orderDetailRepository.delete(id);
+    }
 };
-OrderService = __decorate([
+OrderDetailService = __decorate([
     common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(order_entity_1.Order)),
+    __param(0, typeorm_1.InjectRepository(order_detail_entity_1.OrderDetail)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         user_service_1.UserService])
-], OrderService);
-exports.OrderService = OrderService;
-//# sourceMappingURL=order.service.js.map
+], OrderDetailService);
+exports.OrderDetailService = OrderDetailService;
+//# sourceMappingURL=order-detail.service.js.map
