@@ -4276,9 +4276,39 @@
         "signature": "b112ec8d0a9225ad0f2c546220cad4b0fa135e2f39a6e006afefe119aeec774b",
         "affectsGlobalScope": false
       },
+      "../src/order/dto/create-order.dto.ts": {
+        "version": "9cb343ef9c21dd4b3f1d3152eb8f164f3bfc94e2457c23028ff9b3843573eb75",
+        "signature": "8d91baa16e174ccec9179d5324c146057e94a28e121273159fd041f197460ba9",
+        "affectsGlobalScope": false
+      },
+      "../src/order/dto/update-order.dto.ts": {
+        "version": "1c1f8880d5231ebe7cab3a5153792a40d9d6b0bff025b5c52bb0172c7e8160d6",
+        "signature": "5af455d6ebab66ee9f141a24f06c129555665b156764f8d4478d2c30615eec06",
+        "affectsGlobalScope": false
+      },
+      "../src/order/entities/order.entity.ts": {
+        "version": "a1710b903e2ccd29baa044f869b26c164558dde4d9371a10931fefd3175d8f85",
+        "signature": "797f84c02aae5287dd2f6685d84d8acd055bfc18c2685d9e4a4a8fb29a57f6c9",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.service.ts": {
+        "version": "486e85b9d1b985589d85b82b610c28ea08f879f1e967cc2ed5a13cb33c3a1d1f",
+        "signature": "fd5119bd760d8b976d082b41dc85d0c6f739da66bf6e4752d67f2d3a2c081e41",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.controller.ts": {
+        "version": "f079e0850bb0fad576f06e201183612321a44e1a477649c67d7ede9d1197c251",
+        "signature": "16917e287bd1a0a3df4b655bbce054a1412db5e405bbc076df2505de6d78b4e2",
+        "affectsGlobalScope": false
+      },
+      "../src/order/order.module.ts": {
+        "version": "fe8b017bcc252b5c1608d86c08cffe5172cf3e6f0fe0b6f3e65e65e5301199bb",
+        "signature": "03b8112aa80d4314c18f98dc39f72e0653135546d00d8c9bcd5e21a461e5218d",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "ab1caaa3c947fa05d6b0021b54ce3ca0e4521dc1a6e3bb28b297a6d42d19ed61",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "version": "af3dc7ebe240ba982fc725da536846afdd5b63b425d4afdfe7aeb8ec2d424062",
+        "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4542,8 +4572,8 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "674180b3c3655663c825f5071c56b1f8a20ba4d86be4a52c0b0dce4274e7625b",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "version": "281651cc70a6637cc47ec74f1a33633551c922d3470c4cd3d75992f7c61be170",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -8104,6 +8134,7 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/auth/auth.module.ts",
+        "../src/order/order.module.ts",
         "../src/product/product.module.ts"
       ],
       "../src/app.service.ts": [
@@ -8177,6 +8208,40 @@
         "../node_modules/@nestjs/platform-express/index.d.ts",
         "../node_modules/@nestjs/swagger/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/order/dto/create-order.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts"
+      ],
+      "../src/order/dto/update-order.dto.ts": [
+        "../node_modules/@nestjs/swagger/index.d.ts",
+        "../src/order/dto/create-order.dto.ts"
+      ],
+      "../src/order/entities/order.entity.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts"
+      ],
+      "../src/order/order.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/jwt.guard.ts",
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/order.service.ts"
+      ],
+      "../src/order/order.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.controller.ts",
+        "../src/order/order.service.ts"
+      ],
+      "../src/order/order.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/user/user.service.ts",
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts"
       ],
       "../src/product/dto/create-product.dto.ts": [
         "../node_modules/@nestjs/swagger/index.d.ts"
@@ -11583,6 +11648,29 @@
         "../src/auth/dto/create-user.dto.ts",
         "../src/auth/entities/user.entity.ts"
       ],
+      "../src/order/dto/update-order.dto.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/order/dto/create-order.dto.ts"
+      ],
+      "../src/order/entities/order.entity.ts": [
+        "../src/auth/entities/user.entity.ts"
+      ],
+      "../src/order/order.controller.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts",
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts",
+        "../src/order/order.service.ts"
+      ],
+      "../src/order/order.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/auth/entities/user.entity.ts",
+        "../src/auth/user/user.service.ts",
+        "../src/order/dto/create-order.dto.ts",
+        "../src/order/dto/update-order.dto.ts",
+        "../src/order/entities/order.entity.ts"
+      ],
       "../src/product/dto/update-product.dto.ts": [
         "../node_modules/@nestjs/mapped-types/index.d.ts",
         "../src/product/dto/create-product.dto.ts"
@@ -12541,6 +12629,12 @@
       "../src/auth/jwt.strategy.ts",
       "../src/auth/user/user.service.ts",
       "../src/main.ts",
+      "../src/order/dto/create-order.dto.ts",
+      "../src/order/dto/update-order.dto.ts",
+      "../src/order/entities/order.entity.ts",
+      "../src/order/order.controller.ts",
+      "../src/order/order.module.ts",
+      "../src/order/order.service.ts",
       "../src/product/dto/create-product.dto.ts",
       "../src/product/dto/update-product.dto.ts",
       "../src/product/entities/product.entity.ts",

@@ -4,8 +4,8 @@
     "port": 3306,
     "username": "root",
     "password": "Sushil@1997",
-    "database": "shopnestdb",
+    "database": "Project",
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": false,
+    "synchronize": true,
     "autoLoadEntities": true
 }
