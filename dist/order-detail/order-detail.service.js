@@ -38,7 +38,9 @@ let OrderDetailService = class OrderDetailService {
         });
     }
     findAll() {
-        return this.orderDetailRepository.find();
+        return this.orderDetailRepository.find({
+            relations: ["user", "orderId", "payment", "address"],
+        });
     }
     findOne(id) {
         return this.orderDetailRepository.findOne(id).then((data) => {

@@ -1,3 +1,4 @@
+import { UserEntity } from "src/auth/entities/user.entity";
 import { UserService } from "src/auth/user/user.service";
 import { Repository } from "typeorm";
 import { CreateOrderDto } from "./dto/create-order.dto";
@@ -11,9 +12,9 @@ export declare class OrderService {
         amount: number;
         orderDate: Date;
         shoppingDate: Date;
-        user: import("../auth/entities/user.entity").UserEntity;
+        user: UserEntity;
     } & Order>;
     findAll(): Promise<Order[]>;
-    findOne(id: number): Promise<Order>;
+    findOne(id: number): Promise<void>;
     update(id: number, updateOrderDto: UpdateOrderDto): Promise<import("typeorm").UpdateResult>;
 }

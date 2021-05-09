@@ -3,5 +3,5 @@ export declare class CreateAddressDto {
     line2: string;
     city: string;
     state: string;
-    pincode: number;
+    pincode?: number;
 }

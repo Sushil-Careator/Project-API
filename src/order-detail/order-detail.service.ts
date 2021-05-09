@@ -30,7 +30,9 @@ export class OrderDetailService {
     }
 
     findAll() {
-        return this.orderDetailRepository.find();
+        return this.orderDetailRepository.find({
+            relations: ["user", "orderId", "payment", "address"],
+        });
     }
 
     findOne(id: number) {

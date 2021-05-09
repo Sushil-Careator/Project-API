@@ -1,8 +1,8 @@
-import { UserService } from 'src/auth/user/user.service';
-import { Repository } from 'typeorm';
-import { CreateAddressDto } from './dto/create-address.dto';
-import { UpdateAddressDto } from './dto/update-address.dto';
-import { Address } from './entities/address.entity';
+import { UserService } from "src/auth/user/user.service";
+import { Repository } from "typeorm";
+import { CreateAddressDto } from "./dto/create-address.dto";
+import { UpdateAddressDto } from "./dto/update-address.dto";
+import { Address } from "./entities/address.entity";
 export declare class AddressService {
     private addressRepository;
     private userService;

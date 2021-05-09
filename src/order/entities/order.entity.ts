@@ -4,6 +4,7 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
+    OneToMany,
     PrimaryGeneratedColumn,
 } from "typeorm";
 
@@ -27,4 +28,8 @@ export class Order {
     @ManyToOne(() => UserEntity, (user) => user.userId)
     @JoinColumn({ name: "userId" })
     user: UserEntity;
+
+    @OneToMany(() => Order, (order) => order.orderId)
+    @JoinColumn({ name: "userId" })
+    order: UserEntity;
 }

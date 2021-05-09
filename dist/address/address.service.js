@@ -32,12 +32,12 @@ let AddressService = class AddressService {
             line2,
             pincode,
             state,
-            user,
+            user: user,
             createdAt: new Date().toISOString(),
         });
     }
     findAll() {
-        return this.addressRepository.find();
+        return this.addressRepository.find({ relations: ["user"] });
     }
     async findOne(id) {
         return this.addressRepository.findOne(id).then((data) => {

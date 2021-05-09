@@ -19,7 +19,7 @@ let UserEntity = class UserEntity {
     }
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn('uuid'),
+    typeorm_1.PrimaryGeneratedColumn("uuid"),
     __metadata("design:type", String)
 ], UserEntity.prototype, "userId", void 0);
 __decorate([
@@ -35,7 +35,7 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "userPassword", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'datetime' }),
+    typeorm_1.Column({ type: "datetime" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "createdAt", void 0);
 __decorate([
@@ -49,7 +49,7 @@ __decorate([
     __metadata("design:type", Array)
 ], UserEntity.prototype, "address", void 0);
 UserEntity = __decorate([
-    typeorm_1.Entity({ name: 'user' })
+    typeorm_1.Entity({ name: "user" })
 ], UserEntity);
 exports.UserEntity = UserEntity;
 //# sourceMappingURL=user.entity.js.map

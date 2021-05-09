@@ -6,4 +6,5 @@ export declare class Order {
     shoppingDate: Date;
     status: string;
     user: UserEntity;
+    order: UserEntity;
 }

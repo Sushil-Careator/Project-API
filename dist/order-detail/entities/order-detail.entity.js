@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderDetail = void 0;
+const address_entity_1 = require("../../address/entities/address.entity");
 const user_entity_1 = require("../../auth/entities/user.entity");
 const order_entity_1 = require("../../order/entities/order.entity");
+const payment_entity_1 = require("../../payment/entities/payment.entity");
 const product_entity_1 = require("../../product/entities/product.entity");
 const typeorm_1 = require("typeorm");
 let OrderDetail = class OrderDetail {
@@ -38,6 +40,16 @@ __decorate([
     typeorm_1.JoinColumn({ name: "userId" }),
     __metadata("design:type", user_entity_1.UserEntity)
 ], OrderDetail.prototype, "user", void 0);
+__decorate([
+    typeorm_1.ManyToOne(() => payment_entity_1.Payment, (payment) => payment.paymentId),
+    typeorm_1.JoinColumn({ name: "paymentId" }),
+    __metadata("design:type", payment_entity_1.Payment)
+], OrderDetail.prototype, "payment", void 0);
+__decorate([
+    typeorm_1.ManyToOne(() => address_entity_1.Address, (address) => address.id),
+    typeorm_1.JoinColumn({ name: "address" }),
+    __metadata("design:type", address_entity_1.Address)
+], OrderDetail.prototype, "address", void 0);
 OrderDetail = __decorate([
     typeorm_1.Entity({ name: "order-details" })
 ], OrderDetail);

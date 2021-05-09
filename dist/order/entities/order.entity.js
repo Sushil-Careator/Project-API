@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var Order_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Order = void 0;
 const user_entity_1 = require("../../auth/entities/user.entity");
 const typeorm_1 = require("typeorm");
-let Order = class Order {
+let Order = Order_1 = class Order {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
@@ -39,7 +40,12 @@ __decorate([
     typeorm_1.JoinColumn({ name: "userId" }),
     __metadata("design:type", user_entity_1.UserEntity)
 ], Order.prototype, "user", void 0);
-Order = __decorate([
+__decorate([
+    typeorm_1.OneToMany(() => Order_1, (order) => order.orderId),
+    typeorm_1.JoinColumn({ name: "userId" }),
+    __metadata("design:type", user_entity_1.UserEntity)
+], Order.prototype, "order", void 0);
+Order = Order_1 = __decorate([
     typeorm_1.Entity({ name: "order" })
 ], Order);
 exports.Order = Order;

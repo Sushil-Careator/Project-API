@@ -36,7 +36,6 @@ __decorate([
 ], CreateAddressDto.prototype, "state", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], CreateAddressDto.prototype, "pincode", void 0);
 exports.CreateAddressDto = CreateAddressDto;

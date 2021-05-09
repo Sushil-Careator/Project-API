@@ -22,7 +22,10 @@ let UserService = class UserService {
         this.userRepo = userRepo;
     }
     async findByEmail(email) {
-        return this.userRepo.findOne({ where: { userEmail: email } });
+        return this.userRepo.findOne({
+            where: { userEmail: email },
+            relations: ["address"],
+        });
     }
     async findById(id) {
         return this.userRepo.findOne({ where: { userId: id } });
@@ -31,7 +34,7 @@ let UserService = class UserService {
         const { email, password, name } = userDto;
         const isUserAvailable = await this.findByEmail(email);
         if (isUserAvailable) {
-            throw new common_1.HttpException({ message: 'User already exists' }, 400);
+            throw new common_1.HttpException({ message: "User already exists" }, 400);
         }
         const user = this.userRepo.create({
             createdAt: new Date().toISOString(),

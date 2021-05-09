@@ -1,4 +1,4 @@
-import { Address } from 'src/address/entities/address.entity';
+import { Address } from "src/address/entities/address.entity";
 export declare class UserEntity {
     userId: string;
     userName: string;
