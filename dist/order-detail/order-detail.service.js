@@ -33,7 +33,9 @@ let OrderDetailService = class OrderDetailService {
         return this.orderDetailRepository.save({
             orderAmount: createOrderDetailDto.orderAmount,
             orderQty: createOrderDetailDto.orderQty,
-            orderId: count + 2,
+            orderId: count + 1,
+            paymentId: count + 1,
+            address: count + 1,
             user: user,
         });
     }

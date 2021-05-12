@@ -43,12 +43,12 @@ __decorate([
 __decorate([
     typeorm_1.ManyToOne(() => payment_entity_1.Payment, (payment) => payment.paymentId),
     typeorm_1.JoinColumn({ name: "paymentId" }),
-    __metadata("design:type", payment_entity_1.Payment)
-], OrderDetail.prototype, "payment", void 0);
+    __metadata("design:type", Number)
+], OrderDetail.prototype, "paymentId", void 0);
 __decorate([
     typeorm_1.ManyToOne(() => address_entity_1.Address, (address) => address.id),
     typeorm_1.JoinColumn({ name: "address" }),
-    __metadata("design:type", address_entity_1.Address)
+    __metadata("design:type", Number)
 ], OrderDetail.prototype, "address", void 0);
 OrderDetail = __decorate([
     typeorm_1.Entity({ name: "order-details" })

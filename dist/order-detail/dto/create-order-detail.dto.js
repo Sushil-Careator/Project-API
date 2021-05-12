@@ -20,6 +20,14 @@ __decorate([
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Number)
+], CreateOrderDetailDto.prototype, "paymentId", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Number)
+], CreateOrderDetailDto.prototype, "address", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Number)
 ], CreateOrderDetailDto.prototype, "orderAmount", void 0);
 __decorate([
     swagger_1.ApiProperty(),

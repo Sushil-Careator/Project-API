@@ -25,11 +25,6 @@ export class OrderDetail {
     @Column({ type: "integer" })
     orderQty: number;
 
-    // @ManyToOne(() => UserEntity, (user) => user.userId)
-    // @JoinColumn({ name: "userId" })
-    // users: UserEntity;
-
-    //   //@PrimaryColumn()
     @ManyToOne(() => Order, (order) => order.orderId)
     @JoinColumn({ name: "orderId" })
     orderId: number;
@@ -40,9 +35,9 @@ export class OrderDetail {
 
     @ManyToOne(() => Payment, (payment) => payment.paymentId)
     @JoinColumn({ name: "paymentId" })
-    payment: Payment;
+    paymentId: number;
 
     @ManyToOne(() => Address, (address) => address.id)
     @JoinColumn({ name: "address" })
-    address: Address;
+    address: number;
 }

@@ -41,11 +41,11 @@ let ProductService = class ProductService {
             totalPages: Math.ceil(res[1] / size),
         }));
     }
-    fingByQuery(query) {
+    findByQuery(query) {
         return this.productRepository
             .findAndCount({
             where: { productName: typeorm_2.Like(`%${query}%`) },
-            order: { productId: 'ASC' },
+            order: { productId: "ASC" },
         })
             .then((d) => ({ totalItems: d[1], data: d[0] }));
     }
@@ -77,13 +77,14 @@ let ProductService = class ProductService {
             const randomStock = Math.floor(Math.random() * 100);
             const randomPrice = Math.random() * (+maxPrice - +minPrice) + +minPrice;
             const salePrice = !!Math.floor((Math.random() * 1000) % 2)
-                ? randomPrice * (Math.floor(Math.random() * (50 - 10) + 10) / 100)
+                ? randomPrice *
+                    (Math.floor(Math.random() * (50 - 10) + 10) / 100)
                 : randomPrice;
             a[i] = {
                 productId: 1000 + i + 1,
                 productName: unique_names_generator_1.uniqueNamesGenerator({
                     dictionaries: [unique_names_generator_1.adjectives, unique_names_generator_1.colors, unique_names_generator_1.names],
-                    separator: ' ',
+                    separator: " ",
                 }),
                 productImage: `https://picsum.photos/400?image=${Math.floor(Math.random() * 1000)}`,
                 productStock: randomStock,

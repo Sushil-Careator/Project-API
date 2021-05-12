@@ -17,7 +17,7 @@ class UpdateOrderDto extends swagger_1.PartialType(create_order_dto_1.CreateOrde
 __decorate([
     swagger_1.ApiProperty({ example: "order" }),
     __metadata("design:type", Number)
-], UpdateOrderDto.prototype, "amount", void 0);
+], UpdateOrderDto.prototype, "totalAmount", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Date)

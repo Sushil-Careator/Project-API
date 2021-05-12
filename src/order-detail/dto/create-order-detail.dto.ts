@@ -5,6 +5,12 @@ export class CreateOrderDetailDto {
     orderId: number;
 
     @ApiProperty()
+    paymentId: number;
+
+    @ApiProperty()
+    address: number;
+
+    @ApiProperty()
     orderAmount: number;
 
     @ApiProperty()

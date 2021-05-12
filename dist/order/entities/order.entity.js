@@ -22,19 +22,23 @@ __decorate([
 __decorate([
     typeorm_1.Column({ nullable: true, precision: 10 }),
     __metadata("design:type", Number)
-], Order.prototype, "amount", void 0);
+], Order.prototype, "totalAmount", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" }),
     __metadata("design:type", Date)
 ], Order.prototype, "orderDate", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    typeorm_1.Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" }),
     __metadata("design:type", Date)
 ], Order.prototype, "shoppingDate", void 0);
 __decorate([
     typeorm_1.Column({ default: "pending" }),
     __metadata("design:type", String)
 ], Order.prototype, "status", void 0);
+__decorate([
+    typeorm_1.Column("simple-array"),
+    __metadata("design:type", Array)
+], Order.prototype, "products", void 0);
 __decorate([
     typeorm_1.ManyToOne(() => user_entity_1.UserEntity, (user) => user.userId),
     typeorm_1.JoinColumn({ name: "userId" }),

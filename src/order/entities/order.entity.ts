@@ -14,16 +14,19 @@ export class Order {
     orderId: number;
 
     @Column({ nullable: true, precision: 10 })
-    amount: number;
+    totalAmount: number;
 
     @Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" })
     orderDate: Date;
 
-    @Column({ nullable: true })
+    @Column({ nullable: true, default: () => "CURRENT_TIMESTAMP" })
     shoppingDate: Date;
 
     @Column({ default: "pending" })
     status: string;
+
+    @Column("simple-array")
+    products: string[];
 
     @ManyToOne(() => UserEntity, (user) => user.userId)
     @JoinColumn({ name: "userId" })

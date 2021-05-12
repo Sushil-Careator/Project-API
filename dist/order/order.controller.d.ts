@@ -5,9 +5,10 @@ export declare class OrderController {
     private readonly orderService;
     constructor(orderService: OrderService);
     create(req: any, createOrderDto: CreateOrderDto): Promise<{
-        amount: number;
+        totalAmount: number;
         orderDate: Date;
         shoppingDate: Date;
+        products: string[];
         user: import("../auth/entities/user.entity").UserEntity;
     } & import("./entities/order.entity").Order>;
     findAll(): Promise<import("./entities/order.entity").Order[]>;

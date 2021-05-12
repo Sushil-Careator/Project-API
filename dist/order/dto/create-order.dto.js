@@ -16,7 +16,7 @@ class CreateOrderDto {
 __decorate([
     swagger_1.ApiProperty({ example: "order" }),
     __metadata("design:type", Number)
-], CreateOrderDto.prototype, "amount", void 0);
+], CreateOrderDto.prototype, "totalAmount", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Date)
@@ -25,6 +25,10 @@ __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", Date)
 ], CreateOrderDto.prototype, "shoppingDate", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", Array)
+], CreateOrderDto.prototype, "products", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)

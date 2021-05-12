@@ -11,6 +11,8 @@ export declare class OrderDetailService {
         orderAmount: number;
         orderQty: number;
         orderId: number;
+        paymentId: number;
+        address: number;
         user: import("../auth/entities/user.entity").UserEntity;
     } & OrderDetail>;
     findAll(): Promise<OrderDetail[]>;

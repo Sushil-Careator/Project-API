@@ -17,19 +17,22 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("../auth/entities/user.entity");
 const user_service_1 = require("../auth/user/user.service");
+const product_service_1 = require("../product/product.service");
 const typeorm_2 = require("typeorm");
 const order_entity_1 = require("./entities/order.entity");
 let OrderService = class OrderService {
-    constructor(orderRepository, userService) {
+    constructor(orderRepository, userService, productService) {
         this.orderRepository = orderRepository;
         this.userService = userService;
+        this.productService = productService;
     }
     async create(createOrderDto, userId) {
         const user = await this.userService.findById(userId);
         return this.orderRepository.save({
-            amount: createOrderDto.amount,
+            totalAmount: createOrderDto.totalAmount,
             orderDate: createOrderDto.orderDate,
             shoppingDate: createOrderDto.shoppingDate,
+            products: createOrderDto.products,
             user: user,
         });
     }
@@ -40,7 +43,7 @@ let OrderService = class OrderService {
     }
     update(id, updateOrderDto) {
         return this.orderRepository.update({ orderId: id }, {
-            amount: updateOrderDto.amount,
+            totalAmount: updateOrderDto.totalAmount,
             orderDate: updateOrderDto.orderDate,
             shoppingDate: updateOrderDto.shoppingDate,
             status: updateOrderDto.status,
@@ -51,7 +54,8 @@ OrderService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(order_entity_1.Order)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
-        user_service_1.UserService])
+        user_service_1.UserService,
+        product_service_1.ProductService])
 ], OrderService);
 exports.OrderService = OrderService;
 //# sourceMappingURL=order.service.js.map

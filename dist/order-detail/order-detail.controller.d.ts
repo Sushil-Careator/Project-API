@@ -8,6 +8,8 @@ export declare class OrderDetailController {
         orderAmount: number;
         orderQty: number;
         orderId: number;
+        paymentId: number;
+        address: number;
         user: import("../auth/entities/user.entity").UserEntity;
     } & import("./entities/order-detail.entity").OrderDetail>;
     findAll(): Promise<import("./entities/order-detail.entity").OrderDetail[]>;

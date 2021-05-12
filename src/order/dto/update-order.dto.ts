@@ -3,7 +3,7 @@ import { CreateOrderDto } from "./create-order.dto";
 
 export class UpdateOrderDto extends PartialType(CreateOrderDto) {
     @ApiProperty({ example: "order" })
-    amount?: number;
+    totalAmount?: number;
 
     @ApiProperty()
     orderDate?: Date;
