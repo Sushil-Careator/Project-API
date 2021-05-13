@@ -1,9 +1,11 @@
 import { type } from "node:os";
+import { join } from "node:path";
 import { UserEntity } from "src/auth/entities/user.entity";
 import {
     BeforeInsert,
     Column,
     Entity,
+    JoinColumn,
     ManyToOne,
     PrimaryGeneratedColumn,
 } from "typeorm";

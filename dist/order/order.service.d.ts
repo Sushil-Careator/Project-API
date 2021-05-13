@@ -20,4 +20,5 @@ export declare class OrderService {
     findAll(): Promise<Order[]>;
     findOne(id: number): Promise<void>;
     update(id: number, updateOrderDto: UpdateOrderDto): Promise<import("typeorm").UpdateResult>;
+    findById(id: string): Promise<Order[]>;
 }

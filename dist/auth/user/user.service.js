@@ -28,7 +28,10 @@ let UserService = class UserService {
         });
     }
     async findById(id) {
-        return this.userRepo.findOne({ where: { userId: id } });
+        return this.userRepo.findOne({
+            where: { userId: id },
+            relations: ["address", "order"],
+        });
     }
     async create(userDto) {
         const { email, password, name } = userDto;

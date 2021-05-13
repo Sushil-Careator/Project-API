@@ -37,7 +37,7 @@ let OrderService = class OrderService {
         });
     }
     findAll() {
-        return this.orderRepository.find({ relations: ["user"] });
+        return this.orderRepository.find({ relations: ["user", "address"] });
     }
     async findOne(id) {
     }
@@ -47,6 +47,12 @@ let OrderService = class OrderService {
             orderDate: updateOrderDto.orderDate,
             shoppingDate: updateOrderDto.shoppingDate,
             status: updateOrderDto.status,
+        });
+    }
+    async findById(id) {
+        return this.orderRepository.find({
+            where: { user: id },
+            relations: ["user", "address"],
         });
     }
 };

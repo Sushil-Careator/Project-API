@@ -1,3 +1,4 @@
+import { Address } from "src/address/entities/address.entity";
 import { UserEntity } from "src/auth/entities/user.entity";
 import {
     Column,
@@ -32,7 +33,7 @@ export class Order {
     @JoinColumn({ name: "userId" })
     user: UserEntity;
 
-    @OneToMany(() => Order, (order) => order.orderId)
-    @JoinColumn({ name: "userId" })
-    order: UserEntity;
+    @OneToMany(() => Address, (address) => address.user)
+    @JoinColumn({ name: "address" })
+    address: Address;
 }

@@ -23,4 +23,5 @@ export declare class AddressService {
     findOne(id: number): Promise<Address>;
     update(id: number, updateAddressDto: UpdateAddressDto): Promise<import("typeorm").UpdateResult>;
     remove(id: number): Promise<import("typeorm").DeleteResult>;
+    findById(id: string): Promise<Address[]>;
 }

@@ -1,3 +1,4 @@
+import { Address } from "src/address/entities/address.entity";
 import { UserEntity } from "src/auth/entities/user.entity";
 export declare class Order {
     orderId: number;
@@ -7,5 +8,5 @@ export declare class Order {
     status: string;
     products: string[];
     user: UserEntity;
-    order: UserEntity;
+    address: Address;
 }

@@ -55,6 +55,12 @@ let AddressService = class AddressService {
     remove(id) {
         return this.addressRepository.delete({ id });
     }
+    async findById(id) {
+        return this.addressRepository.find({
+            where: { user: id },
+            relations: ["user"],
+        });
+    }
 };
 AddressService = __decorate([
     common_1.Injectable(),

@@ -19,7 +19,10 @@ export class UserService {
     }
 
     async findById(id: string) {
-        return this.userRepo.findOne({ where: { userId: id } });
+        return this.userRepo.findOne({
+            where: { userId: id },
+            relations: ["address", "order"],
+        });
     }
 
     async create(userDto: CreateUserDto) {

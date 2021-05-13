@@ -36,11 +36,11 @@ let AuthController = class AuthController {
     }
 };
 __decorate([
-    common_1.Post('login'),
+    common_1.Post("login"),
     common_1.HttpCode(200),
-    swagger_1.ApiOkResponse({ description: 'Login Successful' }),
+    swagger_1.ApiOkResponse({ description: "Login Successful" }),
     swagger_1.ApiBadRequestResponse({
-        description: 'User does not exists or invalid login details',
+        description: "User does not exists or invalid login details",
     }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
@@ -48,9 +48,11 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "login", null);
 __decorate([
-    common_1.Post('register'),
-    swagger_1.ApiCreatedResponse({ description: 'New user account created' }),
-    swagger_1.ApiBadRequestResponse({ description: 'User already exists or server error' }),
+    common_1.Post("register"),
+    swagger_1.ApiCreatedResponse({ description: "New user account created" }),
+    swagger_1.ApiBadRequestResponse({
+        description: "User already exists or server error",
+    }),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
@@ -58,15 +60,15 @@ __decorate([
 ], AuthController.prototype, "register", null);
 __decorate([
     common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.Get('profile'),
+    common_1.Get("profile"),
     __param(0, common_1.Request()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "getProfile", null);
 AuthController = __decorate([
-    swagger_1.ApiTags('Authentication'),
-    common_1.Controller('auth'),
+    swagger_1.ApiTags("Authentication"),
+    common_1.Controller("auth"),
     __metadata("design:paramtypes", [auth_service_1.AuthService,
         user_service_1.UserService])
 ], AuthController);

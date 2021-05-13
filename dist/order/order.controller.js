@@ -25,14 +25,14 @@ let OrderController = class OrderController {
     create(req, createOrderDto) {
         return this.orderService.create(createOrderDto, req.user.userId);
     }
-    findAll() {
-        return this.orderService.findAll();
-    }
     findOne(id) {
         return this.orderService.findOne(+id);
     }
     update(id, updateOrderDto) {
         return this.orderService.update(+id, updateOrderDto);
+    }
+    getOrder(req) {
+        return this.orderService.findById(req.user.userId);
     }
 };
 __decorate([
@@ -42,12 +42,6 @@ __decorate([
     __metadata("design:paramtypes", [Object, create_order_dto_1.CreateOrderDto]),
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "create", null);
-__decorate([
-    common_1.Get(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], OrderController.prototype, "findAll", null);
 __decorate([
     common_1.Get(":id"),
     __param(0, common_1.Param("id")),
@@ -62,6 +56,14 @@ __decorate([
     __metadata("design:paramtypes", [String, update_order_dto_1.UpdateOrderDto]),
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "update", null);
+__decorate([
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
+    common_1.Get(),
+    __param(0, common_1.Request()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], OrderController.prototype, "getOrder", null);
 OrderController = __decorate([
     common_1.Controller("order"),
     common_1.UseGuards(jwt_guard_1.JwtAuthGuard),

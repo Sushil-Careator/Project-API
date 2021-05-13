@@ -5,9 +5,11 @@ import {
     BeforeInsert,
     OneToMany,
     ManyToMany,
+    JoinColumn,
 } from "typeorm";
 import * as bcrypt from "bcrypt";
 import { Address } from "src/address/entities/address.entity";
+import { Order } from "src/order/entities/order.entity";
 
 @Entity({ name: "user" })
 export class UserEntity {
@@ -35,5 +37,10 @@ export class UserEntity {
 
     // one user will have many addressess
     @OneToMany(() => Address, (address) => address.user)
+    @JoinColumn({ name: "address" })
     address: Address[];
+
+    @OneToMany(() => Order, (order) => order.user)
+    @JoinColumn({ name: "order" })
+    order: Order[];
 }

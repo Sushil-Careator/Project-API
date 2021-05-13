@@ -24,10 +24,10 @@ export class OrderController {
         return this.orderService.create(createOrderDto, req.user.userId);
     }
 
-    @Get()
-    findAll() {
-        return this.orderService.findAll();
-    }
+    // @Get()
+    // findAll() {
+    //     return this.orderService.findAll();
+    // }
 
     @Get(":id")
     findOne(@Param("id") id: string) {
@@ -43,4 +43,11 @@ export class OrderController {
     // remove(@Param("id") id: string) {
     //     return this.orderService.remove(+id);
     // }
+
+    @UseGuards(JwtAuthGuard)
+    @Get()
+    getOrder(@Request() req: any) {
+        // user : userId, email : from JwtStrategy
+        return this.orderService.findById(req.user.userId);
+    }
 }

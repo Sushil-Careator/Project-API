@@ -28,7 +28,7 @@ export class OrderService {
     }
 
     findAll() {
-        return this.orderRepository.find({ relations: ["user"] });
+        return this.orderRepository.find({ relations: ["user", "address"] });
     }
 
     async findOne(id: number) {
@@ -59,4 +59,11 @@ export class OrderService {
     //     remove(id: number) {
     //         return `This action removes a #${id} order`;
     //     }
+
+    async findById(id: string) {
+        return this.orderRepository.find({
+            where: { user: id },
+            relations: ["user", "address"],
+        });
+    }
 }

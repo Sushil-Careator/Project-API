@@ -1,7 +1,7 @@
-import { AuthService } from './auth.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { LoginDto } from './dto/login.dto';
-import { UserService } from './user/user.service';
+import { AuthService } from "./auth.service";
+import { CreateUserDto } from "./dto/create-user.dto";
+import { LoginDto } from "./dto/login.dto";
+import { UserService } from "./user/user.service";
 export declare class AuthController {
     private authService;
     private userService;

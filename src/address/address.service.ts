@@ -62,4 +62,11 @@ export class AddressService {
     remove(id: number) {
         return this.addressRepository.delete({ id });
     }
+
+    async findById(id: string) {
+        return this.addressRepository.find({
+            where: { user: id },
+            relations: ["user"],
+        });
+    }
 }
