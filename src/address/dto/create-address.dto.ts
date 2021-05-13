@@ -4,11 +4,22 @@ import { IsNotEmpty, IsNumber } from "class-validator";
 export class CreateAddressDto {
     @ApiProperty()
     @IsNotEmpty()
-    line1: string;
+    firstName: string;
 
     @ApiProperty()
     @IsNotEmpty()
-    line2: string;
+    lastName: string;
+
+    @ApiProperty()
+    @IsNotEmpty()
+    mobileNo: string;
+
+    @ApiProperty()
+    @IsNotEmpty()
+    line1: string;
+
+    @ApiProperty()
+    line2?: string;
 
     @ApiProperty()
     @IsNotEmpty()

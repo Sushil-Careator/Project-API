@@ -1,6 +1,9 @@
 import { UserEntity } from "src/auth/entities/user.entity";
 export declare class Address {
     id: number;
+    firstName: string;
+    lastName: string;
+    mobileNo: string;
     line1: string;
     line2: string;
     city: string;

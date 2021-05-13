@@ -4167,8 +4167,8 @@
         "affectsGlobalScope": false
       },
       "../src/address/entities/address.entity.ts": {
-        "version": "b6cc5ef62c44b1efe9fec7cf5a45a67bc8d6e88513c856131e50ef024686d5aa",
-        "signature": "fa1428e1706ccf7242f5c4ed727bc29e963df197960a963ccc0f5469ce9e52af",
+        "version": "9d6977fe9bda6066e8a63f088ea033bf1696b30e2de367aa55a7f4c1abd75cea",
+        "signature": "61b65ca7d8686a1559c0eae4f66597ece2496e57890a1353375267749db7b71b",
         "affectsGlobalScope": false
       },
       "../src/auth/entities/user.entity.ts": {
@@ -4252,8 +4252,8 @@
         "affectsGlobalScope": false
       },
       "../src/address/dto/create-address.dto.ts": {
-        "version": "781e8e188cc22fef3afadaa26e44e9661a27ebd2d8e80115c6aa7d4558d3dc76",
-        "signature": "30641f369ab4ca727977a508531b70aa667f33a7ff37bbdb85fb5f993bb5da8a",
+        "version": "1133c3a94ebc2c5f61e688709dca4fe1ec4c6bf68609f39ffe955471baffa7be",
+        "signature": "edf98fba7078553edaa0a541a4a63466ace860ad8f2afaf40b72ee1bef4c195d",
         "affectsGlobalScope": false
       },
       "../src/address/dto/update-address.dto.ts": {
@@ -4262,13 +4262,13 @@
         "affectsGlobalScope": false
       },
       "../src/address/address.service.ts": {
-        "version": "a5f0a7a92e4cd25b40e7141c03f283dda57d9f63ffac3318388b1eb830940d4e",
-        "signature": "c771f368e7fe5d4fc07a724460dbdfad32c5a0777a912287eb8bb8ba9b44272d",
+        "version": "d7e7ff1867d057bd057f588c358e2b13baaf4c95a92b6920e6d6e9a44ef814b0",
+        "signature": "9b733925c4ce175f05af5747d4631b6b544adcd50b6812f0a5c08040ffe83642",
         "affectsGlobalScope": false
       },
       "../src/address/address.controller.ts": {
         "version": "071f20b7dc251b31118c54b8843b91973c2c4e7f5562b4c938130dbc8d25fb51",
-        "signature": "14b1b98e20ddc2bb93ab95f52f7e7d360ce2585c75af23d336081c7eb0f729a8",
+        "signature": "4addebde758a1a1c9f2703a09b39a6f856fe0663cc4250549cdff5d06c55cd97",
         "affectsGlobalScope": false
       },
       "../src/address/address.module.ts": {
@@ -4317,8 +4317,8 @@
         "affectsGlobalScope": false
       },
       "../src/payment/entities/payment.entity.ts": {
-        "version": "ca0cfd08a25be05f5de847aee7c49e923d6b0171f56a080044944dc94cfabfa6",
-        "signature": "3667794deb89dcb3de773ceade07a87568820e1ff8fcbf9c1196986b1703ed40",
+        "version": "a73e1bc52494882430592d04c365bb1aadffc760c7b0f0ef9d2fc19af5d145a0",
+        "signature": "66763919cdd39ef185b59b23296bf576b9e08cef28a1ed6b0759f290c4e8ff7b",
         "affectsGlobalScope": false
       },
       "../src/order-detail/entities/order-detail.entity.ts": {
@@ -8180,6 +8180,7 @@
         "../src/address/dto/create-address.dto.ts"
       ],
       "../src/address/entities/address.entity.ts": [
+        "../node_modules/@types/node/os.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts"
       ],

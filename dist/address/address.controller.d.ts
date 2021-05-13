@@ -6,6 +6,9 @@ export declare class AddressController {
     private readonly addressService;
     constructor(addressService: AddressService);
     create(req: any, createAddressDto: CreateAddressDto): Promise<{
+        firstName: string;
+        lastName: string;
+        mobileNo: string;
         city: string;
         line1: string;
         line2: string;

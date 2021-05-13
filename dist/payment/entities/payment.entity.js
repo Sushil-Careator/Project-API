@@ -31,10 +31,6 @@ __decorate([
     __metadata("design:type", String)
 ], Payment.prototype, "paymentMethod", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
-    __metadata("design:type", String)
-], Payment.prototype, "paymentType", void 0);
-__decorate([
     typeorm_1.Column(),
     __metadata("design:type", Number)
 ], Payment.prototype, "orderId", void 0);

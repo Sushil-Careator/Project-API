@@ -4,7 +4,6 @@ export declare class Payment {
     amountPaid: number;
     paymentDate: Date;
     paymentMethod: string;
-    paymentType: string;
     orderId: number;
     user: UserEntity;
 }

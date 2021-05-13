@@ -1,3 +1,4 @@
+import { type } from "node:os";
 import { UserEntity } from "src/auth/entities/user.entity";
 import {
     BeforeInsert,
@@ -13,9 +14,18 @@ export class Address {
     id: number;
 
     @Column()
-    line1: string;
+    firstName: string;
 
     @Column()
+    lastName: string;
+
+    @Column({ width: 12 })
+    mobileNo: string;
+
+    @Column()
+    line1: string;
+
+    @Column({ nullable: true })
     line2: string;
 
     @Column()

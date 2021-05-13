@@ -21,9 +21,6 @@ export class Payment {
     @Column({ nullable: true })
     paymentMethod: string;
 
-    @Column({ nullable: true })
-    paymentType: string;
-
     @Column()
     orderId: number;
 

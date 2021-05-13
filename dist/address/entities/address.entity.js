@@ -21,9 +21,21 @@ __decorate([
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Address.prototype, "line1", void 0);
+], Address.prototype, "firstName", void 0);
 __decorate([
     typeorm_1.Column(),
+    __metadata("design:type", String)
+], Address.prototype, "lastName", void 0);
+__decorate([
+    typeorm_1.Column({ width: 12 }),
+    __metadata("design:type", String)
+], Address.prototype, "mobileNo", void 0);
+__decorate([
+    typeorm_1.Column(),
+    __metadata("design:type", String)
+], Address.prototype, "line1", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], Address.prototype, "line2", void 0);
 __decorate([
