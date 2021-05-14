@@ -16,17 +16,14 @@ class CreateAddressDto {
 }
 __decorate([
     swagger_1.ApiProperty(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], CreateAddressDto.prototype, "firstName", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], CreateAddressDto.prototype, "lastName", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    class_validator_1.IsNotEmpty(),
     __metadata("design:type", String)
 ], CreateAddressDto.prototype, "mobileNo", void 0);
 __decorate([

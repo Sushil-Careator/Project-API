@@ -29,7 +29,7 @@ let ProductController = class ProductController {
     createBulk() {
         return this.productService.bulkCreate();
     }
-    findAll(page = 1, size = 20) {
+    findAll(page = 1, size) {
         return this.productService.findAll(page, size);
     }
     findByQuery(query) {

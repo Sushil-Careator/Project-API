@@ -9,7 +9,7 @@ export declare class ProductController {
         productImage: string;
     } & import("./entities/product.entity").Product>;
     createBulk(): Promise<import("typeorm").InsertResult>;
-    findAll(page?: number, size?: number): Promise<{
+    findAll(page: number, size: number): Promise<{
         totalItems: number;
         data: import("./entities/product.entity").Product[];
         currentPage: number;
