@@ -29,6 +29,9 @@ export class Order {
     @Column("simple-array")
     products: string[];
 
+    @Column({ default: false, nullable: false })
+    isCancelled: boolean;
+
     @ManyToOne(() => UserEntity, (user) => user.userId)
     @JoinColumn({ name: "userId" })
     user: UserEntity;

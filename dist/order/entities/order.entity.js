@@ -40,6 +40,10 @@ __decorate([
     __metadata("design:type", Array)
 ], Order.prototype, "products", void 0);
 __decorate([
+    typeorm_1.Column({ default: false, nullable: false }),
+    __metadata("design:type", Boolean)
+], Order.prototype, "isCancelled", void 0);
+__decorate([
     typeorm_1.ManyToOne(() => user_entity_1.UserEntity, (user) => user.userId),
     typeorm_1.JoinColumn({ name: "userId" }),
     __metadata("design:type", user_entity_1.UserEntity)

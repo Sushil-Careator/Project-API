@@ -4172,8 +4172,8 @@
         "affectsGlobalScope": false
       },
       "../src/order/entities/order.entity.ts": {
-        "version": "86e5022a6f941ea577f4242a2cf248c0b0d8f16e961dfe5e66680e84cdc1ea12",
-        "signature": "69403215ac362962523c19a1b1ede37c0be263f4daa65b82ab3d3d0e54b66ae5",
+        "version": "2c435b25765c8795532aa6256030bf6594800d830c36291cd30f25de510a4369",
+        "signature": "8972995521fb86211ffd140cd7460b5ed4cefd98bab82a7d6e46c9f7246511b6",
         "affectsGlobalScope": false
       },
       "../src/auth/entities/user.entity.ts": {
