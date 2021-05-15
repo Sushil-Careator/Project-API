@@ -3,7 +3,7 @@ import { CreateProductDto } from "./dto/create-product.dto";
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Product } from "./entities/product.entity";
-import { Like, Repository } from "typeorm";
+import { Between, ILike, LessThan, Like, MoreThan, Repository } from "typeorm";
 import {
     uniqueNamesGenerator,
     adjectives,
@@ -25,9 +25,135 @@ export class ProductService {
         });
     }
 
-    findAll(page: number, size: number) {
+    findAllpa(
+        page: number,
+        size: number,
+        minPrice: number,
+        maxPrice: number,
+        searchData: string,
+        sortName: string,
+        sortPrice: string
+    ) {
         return this.productRepository
             .findAndCount({
+                where: {
+                    productSalePrice: Between(minPrice, maxPrice),
+                    productName: Like(`%${searchData}%`),
+                },
+                order: { productSalePrice: "ASC" },
+
+                take: size,
+                skip: (page - 1) * size,
+            })
+            .then((res) => ({
+                totalItems: res[1],
+                data: res[0],
+                currentPage: page,
+                totalPages: Math.ceil(res[1] / size),
+            }));
+    }
+
+    findAllpd(
+        page: number,
+        size: number,
+        minPrice: number,
+        maxPrice: number,
+        searchData: string,
+        sortName: string,
+        sortPrice: string
+    ) {
+        return this.productRepository
+            .findAndCount({
+                where: {
+                    productSalePrice: Between(minPrice, maxPrice),
+                    productName: Like(`%${searchData}%`),
+                },
+                order: { productSalePrice: "DESC" },
+
+                take: size,
+                skip: (page - 1) * size,
+            })
+            .then((res) => ({
+                totalItems: res[1],
+                data: res[0],
+                currentPage: page,
+                totalPages: Math.ceil(res[1] / size),
+            }));
+    }
+
+    findAllna(
+        page: number,
+        size: number,
+        minPrice: number,
+        maxPrice: number,
+        searchData: string,
+        sortName: string,
+        sortPrice: string
+    ) {
+        return this.productRepository
+            .findAndCount({
+                where: {
+                    productSalePrice: Between(minPrice, maxPrice),
+                    productName: Like(`%${searchData}%`),
+                },
+                order: { productName: "ASC" },
+
+                take: size,
+                skip: (page - 1) * size,
+            })
+            .then((res) => ({
+                totalItems: res[1],
+                data: res[0],
+                currentPage: page,
+                totalPages: Math.ceil(res[1] / size),
+            }));
+    }
+
+    findAllnd(
+        page: number,
+        size: number,
+        minPrice: number,
+        maxPrice: number,
+        searchData: string,
+        sortName: string,
+        sortPrice: string
+    ) {
+        return this.productRepository
+            .findAndCount({
+                where: {
+                    productSalePrice: Between(minPrice, maxPrice),
+                    productName: Like(`%${searchData}%`),
+                },
+                order: { productName: "DESC" },
+
+                take: size,
+                skip: (page - 1) * size,
+            })
+            .then((res) => ({
+                totalItems: res[1],
+                data: res[0],
+                currentPage: page,
+                totalPages: Math.ceil(res[1] / size),
+            }));
+    }
+
+    findAll(
+        page: number,
+        size: number,
+        minPrice: number,
+        maxPrice: number,
+        searchData: string,
+        sortName: string,
+        sortPrice: string
+    ) {
+        return this.productRepository
+            .findAndCount({
+                where: {
+                    productSalePrice: Between(minPrice, maxPrice),
+                    productName: Like(`%${searchData}%`),
+                },
+                // order: { sortBy: "ASC" },
+
                 take: size,
                 skip: (page - 1) * size,
             })

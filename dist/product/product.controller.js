@@ -29,8 +29,20 @@ let ProductController = class ProductController {
     createBulk() {
         return this.productService.bulkCreate();
     }
-    findAll(page = 1, size) {
-        return this.productService.findAll(page, size);
+    findAll(page = 1, size = 20, minPrice = 1, maxPrice = 5000, searchData, sortName, sortPrice) {
+        if (sortName == "productSalePrice" && sortPrice == "ASC") {
+            return this.productService.findAllpa(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+        }
+        if (sortName == "productSalePrice" && sortPrice == "DESC") {
+            return this.productService.findAllpd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+        }
+        if (sortName == "productName" && sortPrice == "ASC") {
+            return this.productService.findAllna(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+        }
+        if (sortName == "productName" && sortPrice == "DESC") {
+            return this.productService.findAllnd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+        }
+        return this.productService.findAll(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
     }
     findByQuery(query) {
         return this.productService.findByQuery(query);
@@ -60,9 +72,15 @@ __decorate([
 ], ProductController.prototype, "createBulk", null);
 __decorate([
     common_1.Get(),
-    __param(0, common_1.Query("page")), __param(1, common_1.Query("size")),
+    __param(0, common_1.Query("page")),
+    __param(1, common_1.Query("size")),
+    __param(2, common_1.Query("minPrice")),
+    __param(3, common_1.Query("maxPrice")),
+    __param(4, common_1.Query("searchData")),
+    __param(5, common_1.Query("sortName")),
+    __param(6, common_1.Query("sortPrice")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:paramtypes", [Number, Number, Number, Number, String, String, String]),
     __metadata("design:returntype", void 0)
 ], ProductController.prototype, "findAll", null);
 __decorate([

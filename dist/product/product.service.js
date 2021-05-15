@@ -28,9 +28,85 @@ let ProductService = class ProductService {
             productImage: createProductDto.image,
         });
     }
-    findAll(page, size) {
+    findAllpa(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
         return this.productRepository
             .findAndCount({
+            where: {
+                productSalePrice: typeorm_2.Between(minPrice, maxPrice),
+                productName: typeorm_2.Like(`%${searchData}%`),
+            },
+            order: { productSalePrice: "ASC" },
+            take: size,
+            skip: (page - 1) * size,
+        })
+            .then((res) => ({
+            totalItems: res[1],
+            data: res[0],
+            currentPage: page,
+            totalPages: Math.ceil(res[1] / size),
+        }));
+    }
+    findAllpd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+        return this.productRepository
+            .findAndCount({
+            where: {
+                productSalePrice: typeorm_2.Between(minPrice, maxPrice),
+                productName: typeorm_2.Like(`%${searchData}%`),
+            },
+            order: { productSalePrice: "DESC" },
+            take: size,
+            skip: (page - 1) * size,
+        })
+            .then((res) => ({
+            totalItems: res[1],
+            data: res[0],
+            currentPage: page,
+            totalPages: Math.ceil(res[1] / size),
+        }));
+    }
+    findAllna(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+        return this.productRepository
+            .findAndCount({
+            where: {
+                productSalePrice: typeorm_2.Between(minPrice, maxPrice),
+                productName: typeorm_2.Like(`%${searchData}%`),
+            },
+            order: { productName: "ASC" },
+            take: size,
+            skip: (page - 1) * size,
+        })
+            .then((res) => ({
+            totalItems: res[1],
+            data: res[0],
+            currentPage: page,
+            totalPages: Math.ceil(res[1] / size),
+        }));
+    }
+    findAllnd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+        return this.productRepository
+            .findAndCount({
+            where: {
+                productSalePrice: typeorm_2.Between(minPrice, maxPrice),
+                productName: typeorm_2.Like(`%${searchData}%`),
+            },
+            order: { productName: "DESC" },
+            take: size,
+            skip: (page - 1) * size,
+        })
+            .then((res) => ({
+            totalItems: res[1],
+            data: res[0],
+            currentPage: page,
+            totalPages: Math.ceil(res[1] / size),
+        }));
+    }
+    findAll(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+        return this.productRepository
+            .findAndCount({
+            where: {
+                productSalePrice: typeorm_2.Between(minPrice, maxPrice),
+                productName: typeorm_2.Like(`%${searchData}%`),
+            },
             take: size,
             skip: (page - 1) * size,
         })
