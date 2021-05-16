@@ -16,19 +16,7 @@ class UpdateOrderDto extends swagger_1.PartialType(create_order_dto_1.CreateOrde
 }
 __decorate([
     swagger_1.ApiProperty({ example: "order" }),
-    __metadata("design:type", Number)
-], UpdateOrderDto.prototype, "totalAmount", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", Date)
-], UpdateOrderDto.prototype, "orderDate", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", Date)
-], UpdateOrderDto.prototype, "shoppingDate", void 0);
-__decorate([
-    swagger_1.ApiProperty(),
-    __metadata("design:type", String)
-], UpdateOrderDto.prototype, "status", void 0);
+    __metadata("design:type", Boolean)
+], UpdateOrderDto.prototype, "isCancelled", void 0);
 exports.UpdateOrderDto = UpdateOrderDto;
 //# sourceMappingURL=update-order.dto.js.map

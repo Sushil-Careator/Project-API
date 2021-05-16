@@ -4287,12 +4287,12 @@
         "affectsGlobalScope": false
       },
       "../src/order/dto/update-order.dto.ts": {
-        "version": "941a65d5bc880f2b0bc8e48a3a0867c2f6b3f10245af3b0c0443a896b204701e",
-        "signature": "0ca5302a16700486de4548ec89c548680e20c1ea9aecb4ae2c2c3bcb1835cdff",
+        "version": "f4caec6d783ab0a32cb42bddfa7c40888a7b3aa986c33019c22030c9f62dd1aa",
+        "signature": "9dce23e708d439a0d2d68df97cf14235aaf5776ab625517448bb703c9da025fb",
         "affectsGlobalScope": false
       },
       "../src/order/order.service.ts": {
-        "version": "4af11cbb903c1cd2beb21b79436593a11ff3631929455287a16dd099d198b67e",
+        "version": "0f7339a84ae16af3040b39ef91c28bb302f50277d04c266707f5ef6d59b66768",
         "signature": "5a705546ef0e605945cbc06b46ec2dfce2b5b008884126b8cf0248f2aee90eed",
         "affectsGlobalScope": false
       },

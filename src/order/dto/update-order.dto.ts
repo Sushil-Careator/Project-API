@@ -3,14 +3,6 @@ import { CreateOrderDto } from "./create-order.dto";
 
 export class UpdateOrderDto extends PartialType(CreateOrderDto) {
     @ApiProperty({ example: "order" })
-    totalAmount?: number;
+    isCancelled: boolean;
 
-    @ApiProperty()
-    orderDate?: Date;
-
-    @ApiProperty()
-    shoppingDate?: Date;
-
-    @ApiProperty()
-    status?: string;
 }

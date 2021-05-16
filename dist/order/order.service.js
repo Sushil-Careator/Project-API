@@ -43,10 +43,7 @@ let OrderService = class OrderService {
     }
     update(id, updateOrderDto) {
         return this.orderRepository.update({ orderId: id }, {
-            totalAmount: updateOrderDto.totalAmount,
-            orderDate: updateOrderDto.orderDate,
-            shoppingDate: updateOrderDto.shoppingDate,
-            status: updateOrderDto.status,
+            isCancelled: updateOrderDto.isCancelled,
         });
     }
     async findById(id) {

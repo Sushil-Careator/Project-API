@@ -48,10 +48,7 @@ export class OrderService {
         return this.orderRepository.update(
             { orderId: id },
             {
-                totalAmount: updateOrderDto.totalAmount,
-                orderDate: updateOrderDto.orderDate,
-                shoppingDate: updateOrderDto.shoppingDate,
-                status: updateOrderDto.status,
+                isCancelled: updateOrderDto.isCancelled,
             }
         );
     }
