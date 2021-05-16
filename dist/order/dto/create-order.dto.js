@@ -27,8 +27,12 @@ __decorate([
 ], CreateOrderDto.prototype, "shoppingDate", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Array)
+    __metadata("design:type", String)
 ], CreateOrderDto.prototype, "products", void 0);
+__decorate([
+    swagger_1.ApiProperty(),
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "qty", void 0);
 __decorate([
     swagger_1.ApiProperty(),
     __metadata("design:type", String)

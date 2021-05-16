@@ -36,8 +36,8 @@ __decorate([
     __metadata("design:type", String)
 ], Order.prototype, "status", void 0);
 __decorate([
-    typeorm_1.Column("simple-array"),
-    __metadata("design:type", Array)
+    typeorm_1.Column({ length: 10000 }),
+    __metadata("design:type", String)
 ], Order.prototype, "products", void 0);
 __decorate([
     typeorm_1.Column({ default: false, nullable: false }),

@@ -8,7 +8,7 @@ export declare class OrderController {
         totalAmount: number;
         orderDate: Date;
         shoppingDate: Date;
-        products: string[];
+        products: string;
         user: import("../auth/entities/user.entity").UserEntity;
     } & import("./entities/order.entity").Order>;
     findOne(id: string): Promise<void>;

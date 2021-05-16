@@ -11,7 +11,10 @@ export class CreateOrderDto {
     shoppingDate: Date;
 
     @ApiProperty()
-    products: string[];
+    products: string;
+
+    @ApiProperty()
+    qty: string;
 
     @ApiProperty()
     status: string;

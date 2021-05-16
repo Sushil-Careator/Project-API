@@ -8,6 +8,7 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
+    OneToMany,
     // OneToOne,
     PrimaryColumn,
     PrimaryGeneratedColumn,
@@ -25,7 +26,7 @@ export class OrderDetail {
     @Column({ type: "integer" })
     orderQty: number;
 
-    @ManyToOne(() => Order, (order) => order.orderId)
+    @OneToMany(() => Order, (order) => order.orderId)
     @JoinColumn({ name: "orderId" })
     orderId: number;
 

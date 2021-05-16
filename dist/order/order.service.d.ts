@@ -14,7 +14,7 @@ export declare class OrderService {
         totalAmount: number;
         orderDate: Date;
         shoppingDate: Date;
-        products: string[];
+        products: string;
         user: UserEntity;
     } & Order>;
     findAll(): Promise<Order[]>;

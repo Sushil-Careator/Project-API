@@ -26,8 +26,8 @@ export class Order {
     @Column({ default: "pending" })
     status: string;
 
-    @Column("simple-array")
-    products: string[];
+    @Column({ length: 10000 })
+    products: string;
 
     @Column({ default: false, nullable: false })
     isCancelled: boolean;

@@ -31,7 +31,7 @@ __decorate([
     __metadata("design:type", Number)
 ], OrderDetail.prototype, "orderQty", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => order_entity_1.Order, (order) => order.orderId),
+    typeorm_1.OneToMany(() => order_entity_1.Order, (order) => order.orderId),
     typeorm_1.JoinColumn({ name: "orderId" }),
     __metadata("design:type", Number)
 ], OrderDetail.prototype, "orderId", void 0);

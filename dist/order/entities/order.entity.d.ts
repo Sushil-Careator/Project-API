@@ -6,7 +6,7 @@ export declare class Order {
     orderDate: Date;
     shoppingDate: Date;
     status: string;
-    products: string[];
+    products: string;
     isCancelled: boolean;
     user: UserEntity;
     address: Address;

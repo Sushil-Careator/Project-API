@@ -4172,8 +4172,8 @@
         "affectsGlobalScope": false
       },
       "../src/order/entities/order.entity.ts": {
-        "version": "2c435b25765c8795532aa6256030bf6594800d830c36291cd30f25de510a4369",
-        "signature": "8972995521fb86211ffd140cd7460b5ed4cefd98bab82a7d6e46c9f7246511b6",
+        "version": "3c71c54fd9ed3f8785949cd5b8a97190ff8df392c4758ff77be89fb830c26f71",
+        "signature": "da7de060bdcca6bd989dde141609844fcb9372aa2504848c50921639e51a26ef",
         "affectsGlobalScope": false
       },
       "../src/auth/entities/user.entity.ts": {
@@ -4282,8 +4282,8 @@
         "affectsGlobalScope": false
       },
       "../src/order/dto/create-order.dto.ts": {
-        "version": "c9a8dae5b8c517ead3644de1c2dd3a8aa5adeae11d1f88319c421a1c65cb21a3",
-        "signature": "f9ff75df32432415fea1ffa64cd05956324186dd9e2c2bf9e77e9958b476539d",
+        "version": "b9c89bb8893bd8637808341f00433f0ec69eee846b54ac179f05e8e834eac0f2",
+        "signature": "d0dbc8d4472155233a5b531af4992909b6ecd09bc4c78dc40754ff5562747f22",
         "affectsGlobalScope": false
       },
       "../src/order/dto/update-order.dto.ts": {
@@ -4293,12 +4293,12 @@
       },
       "../src/order/order.service.ts": {
         "version": "4af11cbb903c1cd2beb21b79436593a11ff3631929455287a16dd099d198b67e",
-        "signature": "86da51a801f910fd9afd1ee171187c02beb682e5e2c3838d86de6f5b2b4e18ce",
+        "signature": "5a705546ef0e605945cbc06b46ec2dfce2b5b008884126b8cf0248f2aee90eed",
         "affectsGlobalScope": false
       },
       "../src/order/order.controller.ts": {
         "version": "9315e8f77871a06797f9c0c98e60c7cbc1e91ec825c4233810c731172b2a343c",
-        "signature": "0d68ea7948b90e450960f654e9a91cff653d83af83f0f56caf749b3dfdcb2ab6",
+        "signature": "01282a0271d53e611bd52ecfd5e15d91088812294bbf7887d68174a85fb8a8ce",
         "affectsGlobalScope": false
       },
       "../src/order/order.module.ts": {
@@ -4322,7 +4322,7 @@
         "affectsGlobalScope": false
       },
       "../src/order-detail/entities/order-detail.entity.ts": {
-        "version": "8e366fd82bfedb060222b268d63d87e08e49ca8fef3f7e753f3c409ad08fdaac",
+        "version": "0cafdbc2ead5e4db698008b96c3a09b7442e2fcd98fdd121357c80357a63f232",
         "signature": "fe1fb7f0eac59b071d80bb9df11f6c3741982339b56d07fd1066ceecff1fbe37",
         "affectsGlobalScope": false
       },
