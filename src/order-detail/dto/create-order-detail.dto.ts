@@ -17,5 +17,5 @@ export class CreateOrderDetailDto {
     orderQty: number;
 
     @ApiProperty()
-    user: number;
+    user: string;
 }

@@ -35,7 +35,7 @@ __decorate([
 ], CreateOrderDetailDto.prototype, "orderQty", void 0);
 __decorate([
     swagger_1.ApiProperty(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], CreateOrderDetailDto.prototype, "user", void 0);
 exports.CreateOrderDetailDto = CreateOrderDetailDto;
 //# sourceMappingURL=create-order-detail.dto.js.map

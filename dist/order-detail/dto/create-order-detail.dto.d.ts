@@ -4,5 +4,5 @@ export declare class CreateOrderDetailDto {
     address: number;
     orderAmount: number;
     orderQty: number;
-    user: number;
+    user: string;
 }

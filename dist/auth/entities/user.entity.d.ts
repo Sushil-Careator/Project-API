@@ -5,6 +5,7 @@ export declare class UserEntity {
     userName: string;
     userEmail: string;
     userPassword: string;
+    profileImage: string;
     createdAt: Date;
     hashPassword(): Promise<void>;
     address: Address[];

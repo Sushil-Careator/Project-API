@@ -36,6 +36,10 @@ __decorate([
     __metadata("design:type", String)
 ], UserEntity.prototype, "userPassword", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], UserEntity.prototype, "profileImage", void 0);
+__decorate([
     typeorm_1.Column({ type: "datetime" }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "createdAt", void 0);

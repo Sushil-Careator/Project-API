@@ -1,7 +1,9 @@
+/// <reference types="multer" />
 import { AuthService } from "./auth.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { LoginDto } from "./dto/login.dto";
 import { UserService } from "./user/user.service";
+import { UserEntity } from "./entities/user.entity";
 export declare class AuthController {
     private authService;
     private userService;
@@ -11,6 +13,9 @@ export declare class AuthController {
         access_token: string;
         expiresIn: number;
     }>;
-    register(createUserDto: CreateUserDto): Promise<import("./entities/user.entity").UserEntity>;
-    getProfile(req: any): Promise<import("./entities/user.entity").UserEntity>;
+    register(createUserDto: CreateUserDto): Promise<UserEntity>;
+    getProfile(req: any): Promise<UserEntity>;
+    uploadFile(file: Express.Multer.File, req: any): import("rxjs").Observable<{
+        imagePath: string;
+    }>;
 }
