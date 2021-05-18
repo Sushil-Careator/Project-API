@@ -17,13 +17,13 @@ const common_1 = require("@nestjs/common");
 const platform_express_1 = require("@nestjs/platform-express");
 const swagger_1 = require("@nestjs/swagger");
 const multer_1 = require("multer");
-const rxjs_1 = require("rxjs");
 const auth_service_1 = require("./auth.service");
 const create_user_dto_1 = require("./dto/create-user.dto");
 const login_dto_1 = require("./dto/login.dto");
 const jwt_guard_1 = require("./jwt.guard");
 const user_service_1 = require("./user/user.service");
 const uuid_1 = require("uuid");
+const operators_1 = require("rxjs/operators");
 let AuthController = class AuthController {
     constructor(authService, userService) {
         this.authService = authService;
@@ -39,10 +39,14 @@ let AuthController = class AuthController {
         return this.userService.findById(req.user.userId);
     }
     uploadFile(file, req) {
-        const user = req.user.user;
-        console.log(user);
+        const user = req.user;
         console.log(file);
-        return rxjs_1.of({ imagePath: file.filename });
+        return this.userService
+            .updateOne(user.userId, { profileImage: file.filename })
+            .pipe(operators_1.tap((user) => console.log(user)), operators_1.map((user) => ({ profileImage: user.profileImage })));
+    }
+    async serveAvatar(fileId, res) {
+        return res.sendFile(fileId, { root: "upload/profileImage" });
     }
 };
 __decorate([
@@ -92,6 +96,13 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "uploadFile", null);
+__decorate([
+    common_1.Get("profileImage/:fileId"),
+    __param(0, common_1.Param("fileId")), __param(1, common_1.Res()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "serveAvatar", null);
 AuthController = __decorate([
     swagger_1.ApiTags("Authentication"),
     common_1.Controller("auth"),

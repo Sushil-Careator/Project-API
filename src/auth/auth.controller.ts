@@ -8,6 +8,8 @@ import {
     Request,
     UseInterceptors,
     UploadedFile,
+    Res,
+    Param,
 } from "@nestjs/common";
 import { FileInterceptor } from "@nestjs/platform-express";
 import {
@@ -17,16 +19,14 @@ import {
     ApiOkResponse,
 } from "@nestjs/swagger";
 import { diskStorage } from "multer";
-import { of } from "rxjs";
 import { AuthService } from "./auth.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { LoginDto } from "./dto/login.dto";
 import { JwtAuthGuard } from "./jwt.guard";
 import { UserService } from "./user/user.service";
 import { v4 as uuidv4 } from "uuid";
-import path from "path";
-import { AuthGuard } from "@nestjs/passport";
 import { UserEntity } from "./entities/user.entity";
+import { map, tap } from "rxjs/operators";
 
 @ApiTags("Authentication")
 @Controller("auth")
@@ -75,11 +75,20 @@ export class AuthController {
         })
     )
     uploadFile(@UploadedFile() file: Express.Multer.File, @Request() req) {
-        const user: UserEntity = req.user.user;
-        console.log(user);
+        const user: UserEntity = req.user;
 
         console.log(file);
 
-        return of({ imagePath: file.filename });
+        return this.userService
+            .updateOne(user.userId, { profileImage: file.filename })
+            .pipe(
+                tap((user: UserEntity) => console.log(user)),
+                map((user: UserEntity) => ({ profileImage: user.profileImage }))
+            );
+    }
+
+    @Get("profileImage/:fileId")
+    async serveAvatar(@Param("fileId") fileId, @Res() res): Promise<any> {
+        return res.sendFile(fileId, { root: "upload/profileImage" });
     }
 }

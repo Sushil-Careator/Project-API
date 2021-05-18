@@ -16,6 +16,7 @@ export declare class AuthController {
     register(createUserDto: CreateUserDto): Promise<UserEntity>;
     getProfile(req: any): Promise<UserEntity>;
     uploadFile(file: Express.Multer.File, req: any): import("rxjs").Observable<{
-        imagePath: string;
+        profileImage: string;
     }>;
+    serveAvatar(fileId: any, res: any): Promise<any>;
 }

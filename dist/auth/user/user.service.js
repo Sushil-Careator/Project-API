@@ -15,8 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const rxjs_1 = require("rxjs");
 const typeorm_2 = require("typeorm");
 const user_entity_1 = require("../entities/user.entity");
+const operators_1 = require("rxjs/operators");
 let UserService = class UserService {
     constructor(userRepo) {
         this.userRepo = userRepo;
@@ -46,6 +48,9 @@ let UserService = class UserService {
             userName: name,
         });
         return this.userRepo.save(user);
+    }
+    updateOne(id, user) {
+        return rxjs_1.from(this.userRepo.update(id, user)).pipe(operators_1.switchMap(() => this.findById(id)));
     }
 };
 UserService = __decorate([
