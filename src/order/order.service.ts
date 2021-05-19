@@ -1,9 +1,8 @@
-import { HttpException, Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { UserEntity } from "src/auth/entities/user.entity";
 import { UserService } from "src/auth/user/user.service";
 import { ProductService } from "src/product/product.service";
-import { getConnection, getRepository, Repository } from "typeorm";
+import { Repository } from "typeorm";
 import { CreateOrderDto } from "./dto/create-order.dto";
 import { UpdateOrderDto } from "./dto/update-order.dto";
 import { Order } from "./entities/order.entity";
@@ -32,10 +31,10 @@ export class OrderService {
     }
 
     async findOne(id: number) {
-        // return this.orderRepository.findOne(id).then((data) => {
-        //     if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
-        //     return data;
-        // });
+        return this.orderRepository.findOne(id).then((data) => {
+            if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
+            return data;
+        });
         // const a = await getRepository(UserEntity)
         //     .createQueryBuilder("user")
         //     .from(this.userRepo, "user")

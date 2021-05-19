@@ -14,7 +14,6 @@ const address_entity_1 = require("../../address/entities/address.entity");
 const user_entity_1 = require("../../auth/entities/user.entity");
 const order_entity_1 = require("../../order/entities/order.entity");
 const payment_entity_1 = require("../../payment/entities/payment.entity");
-const product_entity_1 = require("../../product/entities/product.entity");
 const typeorm_1 = require("typeorm");
 let OrderDetail = class OrderDetail {
 };

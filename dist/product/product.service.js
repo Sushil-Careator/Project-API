@@ -28,7 +28,7 @@ let ProductService = class ProductService {
             productImage: createProductDto.image,
         });
     }
-    findAllpa(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+    findAllpa(page, size, minPrice, maxPrice, searchData) {
         return this.productRepository
             .findAndCount({
             where: {
@@ -46,7 +46,7 @@ let ProductService = class ProductService {
             totalPages: Math.ceil(res[1] / size),
         }));
     }
-    findAllpd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+    findAllpd(page, size, minPrice, maxPrice, searchData) {
         return this.productRepository
             .findAndCount({
             where: {
@@ -64,7 +64,7 @@ let ProductService = class ProductService {
             totalPages: Math.ceil(res[1] / size),
         }));
     }
-    findAllna(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+    findAllna(page, size, minPrice, maxPrice, searchData) {
         return this.productRepository
             .findAndCount({
             where: {
@@ -82,7 +82,7 @@ let ProductService = class ProductService {
             totalPages: Math.ceil(res[1] / size),
         }));
     }
-    findAllnd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+    findAllnd(page, size, minPrice, maxPrice, searchData) {
         return this.productRepository
             .findAndCount({
             where: {
@@ -100,7 +100,7 @@ let ProductService = class ProductService {
             totalPages: Math.ceil(res[1] / size),
         }));
     }
-    findAll(page, size, minPrice, maxPrice, searchData, sortName, sortPrice) {
+    findAll(page, size, minPrice, maxPrice, searchData) {
         return this.productRepository
             .findAndCount({
             where: {

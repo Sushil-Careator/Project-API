@@ -6,14 +6,12 @@ import {
     Patch,
     Param,
     Delete,
-    UseGuards,
     Query,
 } from "@nestjs/common";
 import { ProductService } from "./product.service";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { ApiTags, ApiNotFoundResponse, ApiOkResponse } from "@nestjs/swagger";
-import { JwtAuthGuard } from "src/auth/jwt.guard";
 
 @ApiTags("Product")
 @Controller("product")
@@ -47,9 +45,7 @@ export class ProductController {
                 size,
                 minPrice,
                 maxPrice,
-                searchData,
-                sortName,
-                sortPrice
+                searchData
             );
         }
         if (sortName == "productSalePrice" && sortPrice == "DESC") {
@@ -58,9 +54,7 @@ export class ProductController {
                 size,
                 minPrice,
                 maxPrice,
-                searchData,
-                sortName,
-                sortPrice
+                searchData
             );
         }
 
@@ -70,9 +64,7 @@ export class ProductController {
                 size,
                 minPrice,
                 maxPrice,
-                searchData,
-                sortName,
-                sortPrice
+                searchData
             );
         }
         if (sortName == "productName" && sortPrice == "DESC") {
@@ -81,9 +73,7 @@ export class ProductController {
                 size,
                 minPrice,
                 maxPrice,
-                searchData,
-                sortName,
-                sortPrice
+                searchData
             );
         }
         return this.productService.findAll(
@@ -91,9 +81,7 @@ export class ProductController {
             size,
             minPrice,
             maxPrice,
-            searchData,
-            sortName,
-            sortPrice
+            searchData
         );
     }
 

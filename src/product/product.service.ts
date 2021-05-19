@@ -1,15 +1,14 @@
-import { HttpException, Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { UpdateProductDto } from "./dto/update-product.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Product } from "./entities/product.entity";
-import { Between, ILike, LessThan, Like, MoreThan, Repository } from "typeorm";
+import { Between, Like, Repository } from "typeorm";
 import {
     uniqueNamesGenerator,
     adjectives,
     colors,
     names,
-    languages,
 } from "unique-names-generator";
 
 @Injectable()
@@ -30,9 +29,7 @@ export class ProductService {
         size: number,
         minPrice: number,
         maxPrice: number,
-        searchData: string,
-        sortName: string,
-        sortPrice: string
+        searchData: string
     ) {
         return this.productRepository
             .findAndCount({
@@ -58,9 +55,7 @@ export class ProductService {
         size: number,
         minPrice: number,
         maxPrice: number,
-        searchData: string,
-        sortName: string,
-        sortPrice: string
+        searchData: string
     ) {
         return this.productRepository
             .findAndCount({
@@ -86,9 +81,7 @@ export class ProductService {
         size: number,
         minPrice: number,
         maxPrice: number,
-        searchData: string,
-        sortName: string,
-        sortPrice: string
+        searchData: string
     ) {
         return this.productRepository
             .findAndCount({
@@ -114,9 +107,7 @@ export class ProductService {
         size: number,
         minPrice: number,
         maxPrice: number,
-        searchData: string,
-        sortName: string,
-        sortPrice: string
+        searchData: string
     ) {
         return this.productRepository
             .findAndCount({
@@ -142,9 +133,7 @@ export class ProductService {
         size: number,
         minPrice: number,
         maxPrice: number,
-        searchData: string,
-        sortName: string,
-        sortPrice: string
+        searchData: string
     ) {
         return this.productRepository
             .findAndCount({

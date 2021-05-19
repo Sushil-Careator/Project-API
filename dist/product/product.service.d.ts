@@ -9,31 +9,31 @@ export declare class ProductService {
         productName: string;
         productImage: string;
     } & Product>;
-    findAllpa(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+    findAllpa(page: number, size: number, minPrice: number, maxPrice: number, searchData: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;
         totalPages: number;
     }>;
-    findAllpd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+    findAllpd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;
         totalPages: number;
     }>;
-    findAllna(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+    findAllna(page: number, size: number, minPrice: number, maxPrice: number, searchData: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;
         totalPages: number;
     }>;
-    findAllnd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+    findAllnd(page: number, size: number, minPrice: number, maxPrice: number, searchData: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;
         totalPages: number;
     }>;
-    findAll(page: number, size: number, minPrice: number, maxPrice: number, searchData: string, sortName: string, sortPrice: string): Promise<{
+    findAll(page: number, size: number, minPrice: number, maxPrice: number, searchData: string): Promise<{
         totalItems: number;
         data: Product[];
         currentPage: number;

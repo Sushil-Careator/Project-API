@@ -12,8 +12,6 @@ const order_detail_service_1 = require("./order-detail.service");
 const order_detail_controller_1 = require("./order-detail.controller");
 const order_detail_entity_1 = require("./entities/order-detail.entity");
 const typeorm_1 = require("@nestjs/typeorm");
-const order_entity_1 = require("../order/entities/order.entity");
-const order_service_1 = require("../order/order.service");
 let OrderDetailModule = class OrderDetailModule {
 };
 OrderDetailModule = __decorate([

@@ -17,6 +17,7 @@ const address_module_1 = require("./address/address.module");
 const order_module_1 = require("./order/order.module");
 const order_detail_module_1 = require("./order-detail/order-detail.module");
 const payment_module_1 = require("./payment/payment.module");
+const throttler_1 = require("@nestjs/throttler");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -29,6 +30,10 @@ AppModule = __decorate([
             order_module_1.OrderModule,
             order_detail_module_1.OrderDetailModule,
             payment_module_1.PaymentModule,
+            throttler_1.ThrottlerModule.forRoot({
+                ttl: 60,
+                limit: 10,
+            }),
         ],
         controllers: [
             app_controller_1.AppController,

@@ -49,9 +49,3 @@ export class UserService {
         );
     }
 }
-
-// function switchMap(
-//     arg0: () => Promise<UserEntity>
-// ): import("rxjs").OperatorFunction<import("typeorm").UpdateResult, unknown> {
-//     throw new Error("Function not implemented.");
-// }

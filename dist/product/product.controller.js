@@ -18,7 +18,6 @@ const product_service_1 = require("./product.service");
 const create_product_dto_1 = require("./dto/create-product.dto");
 const update_product_dto_1 = require("./dto/update-product.dto");
 const swagger_1 = require("@nestjs/swagger");
-const jwt_guard_1 = require("../auth/jwt.guard");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
@@ -31,18 +30,18 @@ let ProductController = class ProductController {
     }
     findAll(page = 1, size = 20, minPrice = 1, maxPrice = 5000, searchData, sortName, sortPrice) {
         if (sortName == "productSalePrice" && sortPrice == "ASC") {
-            return this.productService.findAllpa(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+            return this.productService.findAllpa(page, size, minPrice, maxPrice, searchData);
         }
         if (sortName == "productSalePrice" && sortPrice == "DESC") {
-            return this.productService.findAllpd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+            return this.productService.findAllpd(page, size, minPrice, maxPrice, searchData);
         }
         if (sortName == "productName" && sortPrice == "ASC") {
-            return this.productService.findAllna(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+            return this.productService.findAllna(page, size, minPrice, maxPrice, searchData);
         }
         if (sortName == "productName" && sortPrice == "DESC") {
-            return this.productService.findAllnd(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+            return this.productService.findAllnd(page, size, minPrice, maxPrice, searchData);
         }
-        return this.productService.findAll(page, size, minPrice, maxPrice, searchData, sortName, sortPrice);
+        return this.productService.findAll(page, size, minPrice, maxPrice, searchData);
     }
     findByQuery(query) {
         return this.productService.findByQuery(query);

@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const user_entity_1 = require("../auth/entities/user.entity");
 const user_service_1 = require("../auth/user/user.service");
 const product_service_1 = require("../product/product.service");
 const typeorm_2 = require("typeorm");
@@ -40,6 +39,11 @@ let OrderService = class OrderService {
         return this.orderRepository.find({ relations: ["user", "address"] });
     }
     async findOne(id) {
+        return this.orderRepository.findOne(id).then((data) => {
+            if (!data)
+                throw new common_1.NotFoundException();
+            return data;
+        });
     }
     update(id, updateOrderDto) {
         return this.orderRepository.update({ orderId: id }, {
