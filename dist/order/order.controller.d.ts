@@ -11,7 +11,7 @@ export declare class OrderController {
         products: string;
         user: import("../auth/entities/user.entity").UserEntity;
     } & import("./entities/order.entity").Order>;
-    findOne(id: string): Promise<import("./entities/order.entity").Order>;
-    update(id: string, updateOrderDto: UpdateOrderDto): Promise<import("typeorm").UpdateResult>;
+    findOne(id: string): Promise<void>;
+    update(id: string, updateOrderDto: UpdateOrderDto, req: any): Promise<void>;
     getOrder(req: any): Promise<import("./entities/order.entity").Order[]>;
 }

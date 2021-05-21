@@ -17,7 +17,7 @@ export declare class OrderService {
         user: import("../auth/entities/user.entity").UserEntity;
     } & Order>;
     findAll(): Promise<Order[]>;
-    findOne(id: number): Promise<Order>;
-    update(id: number, updateOrderDto: UpdateOrderDto): Promise<import("typeorm").UpdateResult>;
+    findOne(id: number): Promise<void>;
+    update(id: number, updateOrderDto: UpdateOrderDto, userId: any): Promise<void>;
     findById(id: string): Promise<Order[]>;
 }

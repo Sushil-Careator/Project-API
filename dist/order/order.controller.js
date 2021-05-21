@@ -28,8 +28,8 @@ let OrderController = class OrderController {
     findOne(id) {
         return this.orderService.findOne(+id);
     }
-    update(id, updateOrderDto) {
-        return this.orderService.update(+id, updateOrderDto);
+    update(id, updateOrderDto, req) {
+        return this.orderService.update(+id, updateOrderDto, req.user.userId);
     }
     getOrder(req) {
         return this.orderService.findById(req.user.userId);
@@ -51,9 +51,11 @@ __decorate([
 ], OrderController.prototype, "findOne", null);
 __decorate([
     common_1.Patch(":id"),
-    __param(0, common_1.Param("id")), __param(1, common_1.Body()),
+    __param(0, common_1.Param("id")),
+    __param(1, common_1.Body()),
+    __param(2, common_1.Request()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_order_dto_1.UpdateOrderDto]),
+    __metadata("design:paramtypes", [String, update_order_dto_1.UpdateOrderDto, Object]),
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "update", null);
 __decorate([

@@ -4907,13 +4907,13 @@
         "affectsGlobalScope": false
       },
       "../src/order/order.service.ts": {
-        "version": "ce1dabe158263a8aefb05e0440138659dfd7181202424184ded6ffd198bcbf0e",
-        "signature": "db81407c92bda04a598c0e9aa7c759f4455dab0694c4a21288f402b1eddd8321",
+        "version": "107a5c6f0152f25a0e852652c7651acdab27dfbf9c37b79b4ddbbee4f0ba3d2c",
+        "signature": "49f652109a4f074ccbb0a2bb6ac30ae18c52e0e1d212e3483392f5e2e97518b9",
         "affectsGlobalScope": false
       },
       "../src/order/order.controller.ts": {
-        "version": "78365e8fa40de57a43c662aa42174da4f8696d86b17889ed98c1d840ce0862af",
-        "signature": "55665bd67241f8f3214996f230f18de96e1a17557e627687647449a72eeef83e",
+        "version": "8373509fdd0cf32bae7e82caf73bbaf7145ffed302943688c4bcd25b438a15cf",
+        "signature": "4bd66d1993153712e9f4722665c0b22656ede55041403b215830afab9f614743",
         "affectsGlobalScope": false
       },
       "../src/order/order.module.ts": {
@@ -13651,7 +13651,6 @@
         "../src/auth/entities/user.entity.ts"
       ],
       "../src/order/order.controller.ts": [
-        "../node_modules/typeorm/index.d.ts",
         "../src/auth/entities/user.entity.ts",
         "../src/order/dto/create-order.dto.ts",
         "../src/order/dto/update-order.dto.ts",

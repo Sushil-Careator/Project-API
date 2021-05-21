@@ -39,15 +39,17 @@ let OrderService = class OrderService {
         return this.orderRepository.find({ relations: ["user", "address"] });
     }
     async findOne(id) {
-        return this.orderRepository.findOne(id).then((data) => {
-            if (!data)
-                throw new common_1.NotFoundException();
-            return data;
-        });
     }
-    update(id, updateOrderDto) {
-        return this.orderRepository.update({ orderId: id }, {
+    update(id, updateOrderDto, userId) {
+        return this.orderRepository
+            .update({ orderId: id, user: userId }, {
             isCancelled: updateOrderDto.isCancelled,
+        })
+            .then((data) => {
+            console.log(data);
+        })
+            .catch((error) => {
+            console.log(error);
         });
     }
     async findById(id) {

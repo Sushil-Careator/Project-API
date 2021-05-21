@@ -31,10 +31,10 @@ export class OrderService {
     }
 
     async findOne(id: number) {
-        return this.orderRepository.findOne(id).then((data) => {
-            if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
-            return data;
-        });
+        // return this.orderRepository.findOne(id).then((data) => {
+        //     if (!data) throw new NotFoundException(); //throw new HttpException({}, 204);
+        //     return data;
+        // });
         // const a = await getRepository(UserEntity)
         //     .createQueryBuilder("user")
         //     .from(this.userRepo, "user")
@@ -43,13 +43,20 @@ export class OrderService {
         // console.log(a);
     }
 
-    update(id: number, updateOrderDto: UpdateOrderDto) {
-        return this.orderRepository.update(
-            { orderId: id },
-            {
-                isCancelled: updateOrderDto.isCancelled,
-            }
-        );
+    update(id: number, updateOrderDto: UpdateOrderDto, userId: any) {
+        return this.orderRepository
+            .update(
+                { orderId: id, user: userId },
+                {
+                    isCancelled: updateOrderDto.isCancelled,
+                }
+            )
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     //     remove(id: number) {
